@@ -5,6 +5,7 @@
         <title>San Diego Restaurants</title>
         <link rel="stylesheet" href="styles.css">
         <script defer src="/scripts/header.js"></script>
+        <script defer src="/scripts/restaurantCards.js"></script>
         <style>
             h1 {text-align: center;}
             p {text-align: center;}
@@ -27,11 +28,12 @@
         <nav></nav>
         <main class="restaurant-grid">
             <% restaurants.forEach(restaurant => { %>
-                <div class="restaurant">
+                <div class="restaurant" data-id="<%= restaurant.id %>">
                     <img src="<%= restaurant.photo %>" alt="<%= restaurant.name %>">
                     <h2><%= restaurant.name %></h2>
                     <p><%= restaurant.address %></p>
                     <p><%= restaurant.phone %></p>
+                    <button class="delete-btn">X</button>
                 </div>
             <% }); %>
         </main>
